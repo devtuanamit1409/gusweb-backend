@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_item_heads",
+  "info": {
+    "displayName": "head",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}

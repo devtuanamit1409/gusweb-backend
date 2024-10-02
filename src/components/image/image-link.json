@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_image_image_links",
+  "info": {
+    "displayName": "ImageLink"
+  },
+  "options": {},
+  "attributes": {
+    "src": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "alt": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}
