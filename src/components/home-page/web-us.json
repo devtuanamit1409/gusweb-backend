@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_home_page_webuses",
+  "info": {
+    "displayName": "webUs",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "comp.why-us-items"
+    },
+    "data": {
+      "type": "component",
+      "repeatable": false,
+      "component": "comp.why-us-items"
+    }
+  }
+}

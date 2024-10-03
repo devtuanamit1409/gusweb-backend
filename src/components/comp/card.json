@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_comp_cards",
+  "info": {
+    "displayName": "card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    },
+    "title": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "content": {
+      "type": "string"
+    }
+  }
+}
