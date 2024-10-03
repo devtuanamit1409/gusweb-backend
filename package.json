@@ -12,6 +12,13 @@
   },
   "devDependencies": {},
   "dependencies": {
+<<<<<<< Updated upstream
+=======
+    "@strapi/plugin-cloud": "4.25.10",
+    "@strapi/plugin-i18n": "4.25.10",
+    "@strapi/plugin-users-permissions": "4.25.10",
+    "@strapi/provider-upload-cloudinary": "^5.0.2",
+>>>>>>> Stashed changes
     "@strapi/strapi": "4.25.10",
     "@strapi/plugin-users-permissions": "4.25.10",
     "@strapi/plugin-i18n": "4.25.10",

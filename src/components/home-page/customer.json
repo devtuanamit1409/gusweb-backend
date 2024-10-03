@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_home_page_customers",
+  "info": {
+    "displayName": "customer"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "share.paragraph-item"
+    },
+    "images": {
+      "type": "component",
+      "repeatable": true,
+      "component": "image.image"
+    }
+  }
+}
