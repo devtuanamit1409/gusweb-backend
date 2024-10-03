@@ -39,6 +39,18 @@ export interface ShareParagraphItem extends Schema.Component {
   };
 }
 
+export interface ItemIcons extends Schema.Component {
+  collectionName: 'components_item_icons';
+  info: {
+    displayName: 'icons';
+  };
+  attributes: {
+    src: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    alt: Attribute.String;
+    slug: Attribute.String;
+  };
+}
+
 export interface ItemHead extends Schema.Component {
   collectionName: 'components_item_heads';
   info: {
@@ -73,18 +85,6 @@ export interface ImageImage extends Schema.Component {
   attributes: {
     src: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     alt: Attribute.String;
-  };
-}
-
-export interface ImageImageLink extends Schema.Component {
-  collectionName: 'components_image_image_links';
-  info: {
-    displayName: 'ImageLink';
-  };
-  attributes: {
-    src: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    alt: Attribute.String;
-    slug: Attribute.String;
   };
 }
 
@@ -154,24 +154,6 @@ export interface HomePageCustomer extends Schema.Component {
   attributes: {
     title: Attribute.Component<'share.paragraph-item'>;
     images: Attribute.Component<'image.image', true>;
-  };
-}
-
-export interface HomePageBannerMain extends Schema.Component {
-  collectionName: 'components_home_page_banner_mains';
-  info: {
-    displayName: 'bannerMain';
-    description: '';
-  };
-  attributes: {
-    slug: Attribute.String;
-    bannerImage: Attribute.Component<'image.image'>;
-    intro: Attribute.Component<'share.paragraph-item'>;
-    color: Attribute.Component<'share.paragraph-item'>;
-    subImage: Attribute.Component<'image.image'>;
-    Text: Attribute.Component<'comp.text'>;
-    icon: Attribute.Component<'image.image-link', true>;
-    card: Attribute.Component<'comp.card'>;
   };
 }
 
@@ -257,17 +239,16 @@ declare module '@strapi/types' {
       'slide.member': SlideMember;
       'slide.comments': SlideComments;
       'share.paragraph-item': ShareParagraphItem;
+      'item.icons': ItemIcons;
       'item.head': ItemHead;
       'intro.intro': IntroIntro;
       'image.image': ImageImage;
-      'image.image-link': ImageImageLink;
       'home-page.working': HomePageWorking;
       'home-page.why-us': HomePageWhyUs;
       'home-page.who-us': HomePageWhoUs;
       'home-page.web-us': HomePageWebUs;
       'home-page.project': HomePageProject;
       'home-page.customer': HomePageCustomer;
-      'home-page.banner-main': HomePageBannerMain;
       'home-page.about-us': HomePageAboutUs;
       'gmail.gmail': GmailGmail;
       'comp.why-us-items': CompWhyUsItems;

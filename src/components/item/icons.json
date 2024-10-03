@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_item_icons",
+  "info": {
+    "displayName": "icons"
+  },
+  "options": {},
+  "attributes": {
+    "src": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "alt": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_gmail_gmails",
+  "info": {
+    "displayName": "Gmail"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    },
+    "content": {
+      "type": "string"
+    },
+    "tel": {
+      "type": "string"
+    }
+  }
+}

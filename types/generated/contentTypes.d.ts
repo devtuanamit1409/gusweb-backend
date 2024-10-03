@@ -1073,7 +1073,7 @@ export interface ApiFooterFooter extends Schema.SingleType {
           localized: true;
         };
       }>;
-    folows: Attribute.Component<'image.image-link', true> &
+    icons: Attribute.Component<'item.icons', true> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1173,55 +1173,7 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     };
   };
   attributes: {
-    main: Attribute.Component<'home-page.banner-main'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    webUs: Attribute.Component<'home-page.web-us'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    aboutUs: Attribute.Component<'home-page.about-us'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    whyUs: Attribute.Component<'home-page.why-us'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    working: Attribute.Component<'home-page.working'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    project: Attribute.Component<'home-page.project'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    comments: Attribute.Component<'slide.comments', true> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    whoUs: Attribute.Component<'comp.why-us-items'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    customer: Attribute.Component<'home-page.customer'> &
+    a: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
