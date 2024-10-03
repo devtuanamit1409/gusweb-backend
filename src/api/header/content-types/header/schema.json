@@ -4,22 +4,37 @@
   "info": {
     "singularName": "header",
     "pluralName": "headers",
-    "displayName": "Header"
+    "displayName": "Header",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "logo": {
       "type": "component",
       "repeatable": false,
-      "component": "image.image"
+      "component": "image.image",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "items": {
       "type": "component",
       "repeatable": true,
-      "component": "item.head"
+      "component": "item.head",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

@@ -65,6 +65,17 @@
           "localized": true
         }
       }
+    },
+    "icons": {
+      "displayName": "icons",
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "item.icons"
     }
   }
 }

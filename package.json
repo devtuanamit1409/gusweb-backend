@@ -1,14 +1,18 @@
 {
   "name": "gusweb-backend",
-  "private": true,
   "version": "0.1.0",
+  "private": true,
   "description": "A Strapi application",
+  "license": "MIT",
+  "author": {
+    "name": "A Strapi developer"
+  },
   "scripts": {
+    "build": "strapi build",
+    "deploy": "strapi deploy",
     "develop": "strapi develop",
     "start": "strapi start",
-    "build": "strapi build",
-    "strapi": "strapi",
-    "deploy": "strapi deploy"
+    "strapi": "strapi"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "4.25.10",
@@ -19,19 +23,14 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
-    "slugify": "^1.6.6",
     "strapi-plugin-slugify": "^2.3.8",
     "styled-components": "5.3.3"
-  },
-  "author": {
-    "name": "A Strapi developer"
-  },
-  "strapi": {
-    "uuid": "c638b5b6-927f-4ac8-8e36-c249c6a74f9a"
   },
   "engines": {
     "node": ">=18.0.0 <=20.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "strapi": {
+    "uuid": "c638b5b6-927f-4ac8-8e36-c249c6a74f9a"
+  }
 }
