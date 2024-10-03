@@ -1,22 +1,22 @@
-import type { Schema, Attribute } from '@strapi/strapi';
+import type { Schema, Attribute } from "@strapi/strapi";
 
 export interface ItemIcons extends Schema.Component {
-  collectionName: 'components_item_icons';
+  collectionName: "components_item_icons";
   info: {
-    displayName: 'icons';
+    displayName: "icons";
   };
   attributes: {
-    src: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    src: Attribute.Media<"images" | "files" | "videos" | "audios">;
     alt: Attribute.String;
     slug: Attribute.String;
   };
 }
 
 export interface ItemHead extends Schema.Component {
-  collectionName: 'components_item_heads';
+  collectionName: "components_item_heads";
   info: {
-    displayName: 'head';
-    description: '';
+    displayName: "head";
+    description: "";
   };
   attributes: {
     name: Attribute.String;
@@ -25,12 +25,12 @@ export interface ItemHead extends Schema.Component {
 }
 
 export interface IntroIntro extends Schema.Component {
-  collectionName: 'components_intro_intros';
+  collectionName: "components_intro_intros";
   info: {
-    displayName: 'Intro';
+    displayName: "Intro";
   };
   attributes: {
-    image: Attribute.Component<'image.image'>;
+    image: Attribute.Component<"image.image">;
     title: Attribute.String;
     subTitle: Attribute.String;
     description: Attribute.Text;
@@ -38,50 +38,50 @@ export interface IntroIntro extends Schema.Component {
 }
 
 export interface ImageImage extends Schema.Component {
-  collectionName: 'components_image_images';
+  collectionName: "components_image_images";
   info: {
-    displayName: 'image';
-    description: '';
+    displayName: "image";
+    description: "";
   };
   attributes: {
-    src: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    src: Attribute.Media<"images" | "files" | "videos" | "audios">;
     alt: Attribute.String;
   };
 }
 
 export interface GmailGmail extends Schema.Component {
-  collectionName: 'components_gmail_gmails';
+  collectionName: "components_gmail_gmails";
   info: {
-    displayName: 'Gmail';
+    displayName: "Gmail";
   };
   attributes: {
-    image: Attribute.Component<'image.image'>;
+    image: Attribute.Component<"image.image">;
     content: Attribute.String;
     tel: Attribute.String;
   };
 }
 
 export interface AddressAddress extends Schema.Component {
-  collectionName: 'components_address_addresses';
+  collectionName: "components_address_addresses";
   info: {
-    displayName: 'Address';
+    displayName: "Address";
   };
   attributes: {
-    image: Attribute.Component<'image.image'>;
+    image: Attribute.Component<"image.image">;
     title: Attribute.String;
     description: Attribute.Text;
   };
 }
 
-declare module '@strapi/types' {
+declare module "@strapi/types" {
   export module Shared {
     export interface Components {
-      'item.icons': ItemIcons;
-      'item.head': ItemHead;
-      'intro.intro': IntroIntro;
-      'image.image': ImageImage;
-      'gmail.gmail': GmailGmail;
-      'address.address': AddressAddress;
+      "item.icons": ItemIcons;
+      "item.head": ItemHead;
+      "intro.intro": IntroIntro;
+      "image.image": ImageImage;
+      "gmail.gmail": GmailGmail;
+      "address.address": AddressAddress;
     }
   }
 }

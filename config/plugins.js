@@ -7,6 +7,10 @@ module.exports = ({ env }) => ({
           field: "slug",
           references: "title",
         },
+        "sub-category": {
+          field: "slug",
+          references: "title",
+        },
       },
     },
   },

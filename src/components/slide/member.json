@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_slide_members",
+  "info": {
+    "displayName": "member"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    },
+    "role": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

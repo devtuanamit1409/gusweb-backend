@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "name": {
+    "title": {
       "type": "string",
       "pluginOptions": {
         "i18n": {

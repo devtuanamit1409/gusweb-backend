@@ -1,0 +1,50 @@
+{
+  "collectionName": "components_home_page_banner_mains",
+  "info": {
+    "displayName": "bannerMain",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "slug": {
+      "type": "string"
+    },
+    "bannerImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    },
+    "intro": {
+      "type": "component",
+      "repeatable": false,
+      "component": "share.paragraph-item"
+    },
+    "color": {
+      "type": "component",
+      "repeatable": false,
+      "component": "share.paragraph-item"
+    },
+    "subImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    },
+    "Text": {
+      "displayName": "Text",
+      "type": "component",
+      "repeatable": false,
+      "component": "comp.text"
+    },
+    "icon": {
+      "type": "component",
+      "repeatable": true,
+      "component": "image.image-link"
+    },
+    "card": {
+      "displayName": "card",
+      "type": "component",
+      "repeatable": false,
+      "component": "comp.card"
+    }
+  }
+}

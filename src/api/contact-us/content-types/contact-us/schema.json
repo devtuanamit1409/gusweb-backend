@@ -24,7 +24,9 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "max": 2,
+      "min": 2
     },
     "name": {
       "type": "string",
