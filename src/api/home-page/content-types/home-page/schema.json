@@ -77,16 +77,6 @@
       },
       "component": "home-page.working"
     },
-    "projects": {
-      "type": "component",
-      "repeatable": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "comp.why-us-items"
-    },
     "customer": {
       "type": "component",
       "repeatable": false,
@@ -106,6 +96,17 @@
         }
       },
       "component": "slide.comments"
+    },
+    "project": {
+      "displayName": "project",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "home-page.project"
     }
   }
 }

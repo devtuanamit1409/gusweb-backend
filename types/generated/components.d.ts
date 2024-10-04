@@ -126,6 +126,17 @@ export interface HomePageWebUs extends Schema.Component {
   };
 }
 
+export interface HomePageProject extends Schema.Component {
+  collectionName: 'components_home_page_projects';
+  info: {
+    displayName: 'project';
+  };
+  attributes: {
+    image: Attribute.Component<'image.image'>;
+    items: Attribute.Component<'comp.why-us-items', true>;
+  };
+}
+
 export interface HomePageMain extends Schema.Component {
   collectionName: 'components_home_page_mains';
   info: {
@@ -141,6 +152,7 @@ export interface HomePageMain extends Schema.Component {
     text: Attribute.Component<'comp.text'>;
     icons: Attribute.Component<'image.image', true>;
     card: Attribute.Component<'comp.cart'>;
+    actor: Attribute.String;
   };
 }
 
@@ -261,6 +273,7 @@ declare module '@strapi/types' {
       'home-page.working': HomePageWorking;
       'home-page.why-us': HomePageWhyUs;
       'home-page.web-us': HomePageWebUs;
+      'home-page.project': HomePageProject;
       'home-page.main': HomePageMain;
       'home-page.customer': HomePageCustomer;
       'home-page.about-us': HomePageAboutUs;
