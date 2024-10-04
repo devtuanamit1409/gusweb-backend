@@ -11,7 +11,7 @@
       "repeatable": true,
       "component": "comp.why-us-items"
     },
-    "data": {
+    "intro": {
       "type": "component",
       "repeatable": false,
       "component": "comp.why-us-items"

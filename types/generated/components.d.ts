@@ -92,10 +92,12 @@ export interface HomePageWorking extends Schema.Component {
   collectionName: 'components_home_page_workings';
   info: {
     displayName: 'working';
+    description: '';
   };
   attributes: {
-    intro: Attribute.Component<'share.paragraph-item'>;
     items: Attribute.Component<'share.paragraph-item', true>;
+    title: Attribute.String;
+    description: Attribute.Text;
   };
 }
 
@@ -112,17 +114,6 @@ export interface HomePageWhyUs extends Schema.Component {
   };
 }
 
-export interface HomePageWhoUs extends Schema.Component {
-  collectionName: 'components_home_page_who_us';
-  info: {
-    displayName: 'whoUs';
-    description: '';
-  };
-  attributes: {
-    data: Attribute.Component<'comp.why-us-items', true>;
-  };
-}
-
 export interface HomePageWebUs extends Schema.Component {
   collectionName: 'components_home_page_webuses';
   info: {
@@ -131,18 +122,25 @@ export interface HomePageWebUs extends Schema.Component {
   };
   attributes: {
     items: Attribute.Component<'comp.why-us-items', true>;
-    data: Attribute.Component<'comp.why-us-items'>;
+    intro: Attribute.Component<'comp.why-us-items'>;
   };
 }
 
-export interface HomePageProject extends Schema.Component {
-  collectionName: 'components_home_page_projects';
+export interface HomePageMain extends Schema.Component {
+  collectionName: 'components_home_page_mains';
   info: {
-    displayName: 'project';
+    displayName: 'main';
     description: '';
   };
   attributes: {
-    items: Attribute.Component<'comp.why-us-items', true>;
+    banner: Attribute.Component<'comp.why-us-items'>;
+    url: Attribute.String;
+    color: Attribute.Component<'share.paragraph-item'>;
+    order: Attribute.Component<'comp.order'>;
+    subImg: Attribute.Component<'image.image'>;
+    text: Attribute.Component<'comp.text'>;
+    icons: Attribute.Component<'image.image', true>;
+    card: Attribute.Component<'comp.cart'>;
   };
 }
 
@@ -150,10 +148,12 @@ export interface HomePageCustomer extends Schema.Component {
   collectionName: 'components_home_page_customers';
   info: {
     displayName: 'customer';
+    description: '';
   };
   attributes: {
-    title: Attribute.Component<'share.paragraph-item'>;
     images: Attribute.Component<'image.image', true>;
+    description: Attribute.Text;
+    title: Attribute.String;
   };
 }
 
@@ -207,17 +207,32 @@ export interface CompText extends Schema.Component {
   };
 }
 
-export interface CompCard extends Schema.Component {
-  collectionName: 'components_comp_cards';
+export interface CompOrder extends Schema.Component {
+  collectionName: 'components_comp_orders';
   info: {
-    displayName: 'card';
-    description: '';
+    displayName: 'order';
   };
   attributes: {
-    image: Attribute.Component<'image.image'>;
+    src: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    alt: Attribute.String;
     title: Attribute.String;
-    price: Attribute.Decimal;
-    content: Attribute.String;
+    description: Attribute.Text;
+    price: Attribute.Float;
+    percent: Attribute.Float;
+  };
+}
+
+export interface CompCart extends Schema.Component {
+  collectionName: 'components_comp_carts';
+  info: {
+    displayName: 'cart';
+  };
+  attributes: {
+    src: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    alt: Attribute.String;
+    title: Attribute.String;
+    price: Attribute.BigInteger;
+    description: Attribute.Text;
   };
 }
 
@@ -245,15 +260,15 @@ declare module '@strapi/types' {
       'image.image': ImageImage;
       'home-page.working': HomePageWorking;
       'home-page.why-us': HomePageWhyUs;
-      'home-page.who-us': HomePageWhoUs;
       'home-page.web-us': HomePageWebUs;
-      'home-page.project': HomePageProject;
+      'home-page.main': HomePageMain;
       'home-page.customer': HomePageCustomer;
       'home-page.about-us': HomePageAboutUs;
       'gmail.gmail': GmailGmail;
       'comp.why-us-items': CompWhyUsItems;
       'comp.text': CompText;
-      'comp.card': CompCard;
+      'comp.order': CompOrder;
+      'comp.cart': CompCart;
       'address.address': AddressAddress;
     }
   }
