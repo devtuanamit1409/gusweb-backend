@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_service_page_helps",
+  "info": {
+    "displayName": "help",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "items": {
+      "displayName": "item2s",
+      "type": "component",
+      "repeatable": true,
+      "component": "comp.item2s"
+    }
+  }
+}

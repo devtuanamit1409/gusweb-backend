@@ -1,0 +1,92 @@
+{
+  "kind": "singleType",
+  "collectionName": "service_pages",
+  "info": {
+    "singularName": "service-page",
+    "pluralName": "service-pages",
+    "displayName": "ServicePage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "intro": {
+      "type": "component",
+      "repeatable": false,
+      "component": "intro.intro",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "brands": {
+      "type": "component",
+      "repeatable": true,
+      "component": "image.image",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "slogans": {
+      "type": "component",
+      "repeatable": true,
+      "component": "comp.why-us-items",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "help": {
+      "type": "component",
+      "repeatable": false,
+      "component": "service-page.help",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "customerVips": {
+      "type": "component",
+      "repeatable": true,
+      "component": "image.image",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "whyUs": {
+      "displayName": "whyUs",
+      "type": "component",
+      "repeatable": false,
+      "component": "service-page.why-us",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "solution": {
+      "displayName": "solution",
+      "type": "component",
+      "repeatable": false,
+      "component": "service-page.solution",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}
