@@ -39,6 +39,42 @@ export interface ShareParagraphItem extends Schema.Component {
   };
 }
 
+export interface ServicePageWhyUs extends Schema.Component {
+  collectionName: 'components_service_page_whyuses';
+  info: {
+    displayName: 'whyUs';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    items: Attribute.Component<'comp.item1s', true>;
+  };
+}
+
+export interface ServicePageSolution extends Schema.Component {
+  collectionName: 'components_service_page_solutions';
+  info: {
+    displayName: 'solution';
+  };
+  attributes: {
+    title: Attribute.String;
+    items: Attribute.Component<'share.paragraph-item', true>;
+  };
+}
+
+export interface ServicePageHelp extends Schema.Component {
+  collectionName: 'components_service_page_helps';
+  info: {
+    displayName: 'help';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    items: Attribute.Component<'comp.item2s', true>;
+  };
+}
+
 export interface ItemIcons extends Schema.Component {
   collectionName: 'components_item_icons';
   info: {
@@ -234,6 +270,31 @@ export interface CompOrder extends Schema.Component {
   };
 }
 
+export interface CompItem2S extends Schema.Component {
+  collectionName: 'components_comp_item2s';
+  info: {
+    displayName: 'item2s';
+  };
+  attributes: {
+    icon: Attribute.Component<'image.image'>;
+    bg: Attribute.Component<'image.image'>;
+    title: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
+export interface CompItem1S extends Schema.Component {
+  collectionName: 'components_comp_item1s';
+  info: {
+    displayName: 'item1s';
+  };
+  attributes: {
+    src: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    alt: Attribute.String;
+    title: Attribute.String;
+  };
+}
+
 export interface CompCart extends Schema.Component {
   collectionName: 'components_comp_carts';
   info: {
@@ -266,6 +327,9 @@ declare module '@strapi/types' {
       'slide.member': SlideMember;
       'slide.comments': SlideComments;
       'share.paragraph-item': ShareParagraphItem;
+      'service-page.why-us': ServicePageWhyUs;
+      'service-page.solution': ServicePageSolution;
+      'service-page.help': ServicePageHelp;
       'item.icons': ItemIcons;
       'item.head': ItemHead;
       'intro.intro': IntroIntro;
@@ -281,6 +345,8 @@ declare module '@strapi/types' {
       'comp.why-us-items': CompWhyUsItems;
       'comp.text': CompText;
       'comp.order': CompOrder;
+      'comp.item2s': CompItem2S;
+      'comp.item1s': CompItem1S;
       'comp.cart': CompCart;
       'address.address': AddressAddress;
     }

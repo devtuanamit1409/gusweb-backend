@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_service_page_solutions",
+  "info": {
+    "displayName": "solution"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "share.paragraph-item"
+    }
+  }
+}
