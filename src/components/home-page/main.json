@@ -1,0 +1,50 @@
+{
+  "collectionName": "components_home_page_mains",
+  "info": {
+    "displayName": "main",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "comp.why-us-items"
+    },
+    "url": {
+      "type": "string"
+    },
+    "color": {
+      "type": "component",
+      "repeatable": false,
+      "component": "share.paragraph-item"
+    },
+    "order": {
+      "displayName": "order",
+      "type": "component",
+      "repeatable": false,
+      "component": "comp.order"
+    },
+    "subImg": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    },
+    "text": {
+      "type": "component",
+      "repeatable": false,
+      "component": "comp.text"
+    },
+    "icons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "image.image"
+    },
+    "card": {
+      "displayName": "cart",
+      "type": "component",
+      "repeatable": false,
+      "component": "comp.cart"
+    }
+  }
+}
