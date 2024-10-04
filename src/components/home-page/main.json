@@ -45,6 +45,9 @@
       "type": "component",
       "repeatable": false,
       "component": "comp.cart"
+    },
+    "actor": {
+      "type": "string"
     }
   }
 }

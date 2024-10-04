@@ -1209,12 +1209,6 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
           localized: true;
         };
       }>;
-    projects: Attribute.Component<'comp.why-us-items', true> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     customer: Attribute.Component<'home-page.customer'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1222,6 +1216,12 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
         };
       }>;
     chats: Attribute.Component<'slide.comments', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    project: Attribute.Component<'home-page.project'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
