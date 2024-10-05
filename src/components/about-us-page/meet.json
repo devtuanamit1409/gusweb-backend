@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_about_us_page_meets",
+  "info": {
+    "displayName": "meet",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "members": {
+      "displayName": "member",
+      "type": "component",
+      "repeatable": true,
+      "component": "slide.member"
+    }
+  }
+}
