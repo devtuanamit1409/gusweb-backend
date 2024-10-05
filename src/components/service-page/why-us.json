@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_service_page_whyuses",
+  "info": {
+    "displayName": "whyUs"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "comp.item1s"
+    }
+  }
+}

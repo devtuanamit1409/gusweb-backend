@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_home_page_whyuses",
+  "info": {
+    "displayName": "whyUs",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "comp.why-us-items"
+    }
+  }
+}

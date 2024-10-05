@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_home_page_customers",
+  "info": {
+    "displayName": "customer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "type": "component",
+      "repeatable": true,
+      "component": "image.image"
+    },
+    "description": {
+      "type": "text"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

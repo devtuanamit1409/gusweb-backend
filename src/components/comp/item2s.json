@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_comp_item2s",
+  "info": {
+    "displayName": "item2s"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    },
+    "bg": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_comp_orders",
+  "info": {
+    "displayName": "order"
+  },
+  "options": {},
+  "attributes": {
+    "src": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "alt": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "price": {
+      "type": "float"
+    },
+    "percent": {
+      "type": "float"
+    }
+  }
+}

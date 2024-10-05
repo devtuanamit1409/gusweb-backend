@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_home_page_workings",
+  "info": {
+    "displayName": "working",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "share.paragraph-item"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

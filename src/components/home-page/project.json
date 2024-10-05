@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_home_page_projects",
+  "info": {
+    "displayName": "project"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "comp.why-us-items"
+    }
+  }
+}

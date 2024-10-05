@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_slide_comments",
+  "info": {
+    "displayName": "comments"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    },
+    "name": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "integer"
+    },
+    "content": {
+      "type": "text"
+    }
+  }
+}
