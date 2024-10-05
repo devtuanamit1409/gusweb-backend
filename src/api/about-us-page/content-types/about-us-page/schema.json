@@ -1,0 +1,93 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_us_pages",
+  "info": {
+    "singularName": "about-us-page",
+    "pluralName": "about-us-pages",
+    "displayName": "AboutUsPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "intro": {
+      "type": "component",
+      "repeatable": false,
+      "component": "intro.intro",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "about": {
+      "type": "component",
+      "repeatable": false,
+      "component": "comp.why-us-items",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "taget": {
+      "displayName": "taget",
+      "type": "component",
+      "repeatable": false,
+      "component": "about-us-page.taget",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "work": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page.working",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "exp": {
+      "type": "component",
+      "repeatable": false,
+      "component": "comp.why-us-items",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "meet": {
+      "displayName": "meet",
+      "type": "component",
+      "repeatable": false,
+      "component": "about-us-page.meet",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "team": {
+      "displayName": "team",
+      "type": "component",
+      "repeatable": false,
+      "component": "about-us-page.team",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

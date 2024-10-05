@@ -6,10 +6,12 @@ export interface SlideMember extends Schema.Component {
     displayName: 'member';
   };
   attributes: {
-    image: Attribute.Component<'image.image'>;
-    role: Attribute.String;
-    position: Attribute.String;
+    src: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    alt: Attribute.String;
+    name: Attribute.String;
     description: Attribute.Text;
+    position: Attribute.String;
+    role: Attribute.String;
   };
 }
 
@@ -321,6 +323,44 @@ export interface AddressAddress extends Schema.Component {
   };
 }
 
+export interface AboutUsPageTeam extends Schema.Component {
+  collectionName: 'components_about_us_page_teams';
+  info: {
+    displayName: 'team';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String;
+    title: Attribute.String;
+    description: Attribute.Text;
+    items: Attribute.Component<'image.image', true>;
+  };
+}
+
+export interface AboutUsPageTaget extends Schema.Component {
+  collectionName: 'components_about_us_page_tagets';
+  info: {
+    displayName: 'taget';
+  };
+  attributes: {
+    banner: Attribute.Component<'comp.item1s'>;
+    items: Attribute.Component<'share.paragraph-item', true>;
+  };
+}
+
+export interface AboutUsPageMeet extends Schema.Component {
+  collectionName: 'components_about_us_page_meets';
+  info: {
+    displayName: 'meet';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    name: Attribute.String;
+    members: Attribute.Component<'slide.member', true>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -349,6 +389,9 @@ declare module '@strapi/types' {
       'comp.item1s': CompItem1S;
       'comp.cart': CompCart;
       'address.address': AddressAddress;
+      'about-us-page.team': AboutUsPageTeam;
+      'about-us-page.taget': AboutUsPageTaget;
+      'about-us-page.meet': AboutUsPageMeet;
     }
   }
 }
