@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_contact_us_page_maps",
+  "info": {
+    "displayName": "map"
+  },
+  "options": {},
+  "attributes": {
+    "urlMap": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    },
+    "Address": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "time": {
+      "type": "string"
+    }
+  }
+}

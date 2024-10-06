@@ -29,18 +29,6 @@ export interface SlideComments extends Schema.Component {
   };
 }
 
-export interface ShareParagraphItem extends Schema.Component {
-  collectionName: 'components_share_paragraph_items';
-  info: {
-    displayName: 'ParagraphItem';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
-  };
-}
-
 export interface ServicePageWhyUs extends Schema.Component {
   collectionName: 'components_service_page_whyuses';
   info: {
@@ -74,6 +62,18 @@ export interface ServicePageHelp extends Schema.Component {
     title: Attribute.String;
     description: Attribute.Text;
     items: Attribute.Component<'comp.item2s', true>;
+  };
+}
+
+export interface ShareParagraphItem extends Schema.Component {
+  collectionName: 'components_share_paragraph_items';
+  info: {
+    displayName: 'ParagraphItem';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
   };
 }
 
@@ -230,6 +230,31 @@ export interface GmailGmail extends Schema.Component {
   };
 }
 
+export interface ContactUsPageMap extends Schema.Component {
+  collectionName: 'components_contact_us_page_maps';
+  info: {
+    displayName: 'map';
+  };
+  attributes: {
+    urlMap: Attribute.String;
+    logo: Attribute.Component<'image.image'>;
+    Address: Attribute.String;
+    phone: Attribute.String;
+    time: Attribute.String;
+  };
+}
+
+export interface ContactUsPageFolow extends Schema.Component {
+  collectionName: 'components_contact_us_page_folows';
+  info: {
+    displayName: 'folow';
+  };
+  attributes: {
+    image: Attribute.Component<'image.image'>;
+    icons: Attribute.Component<'item.icons', true>;
+  };
+}
+
 export interface CompWhyUsItems extends Schema.Component {
   collectionName: 'components_comp_why_us_items';
   info: {
@@ -366,10 +391,10 @@ declare module '@strapi/types' {
     export interface Components {
       'slide.member': SlideMember;
       'slide.comments': SlideComments;
-      'share.paragraph-item': ShareParagraphItem;
       'service-page.why-us': ServicePageWhyUs;
       'service-page.solution': ServicePageSolution;
       'service-page.help': ServicePageHelp;
+      'share.paragraph-item': ShareParagraphItem;
       'item.icons': ItemIcons;
       'item.head': ItemHead;
       'intro.intro': IntroIntro;
@@ -382,6 +407,8 @@ declare module '@strapi/types' {
       'home-page.customer': HomePageCustomer;
       'home-page.about-us': HomePageAboutUs;
       'gmail.gmail': GmailGmail;
+      'contact-us-page.map': ContactUsPageMap;
+      'contact-us-page.folow': ContactUsPageFolow;
       'comp.why-us-items': CompWhyUsItems;
       'comp.text': CompText;
       'comp.order': CompOrder;
