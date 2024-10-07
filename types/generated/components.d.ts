@@ -18,10 +18,12 @@ export interface SlideMember extends Schema.Component {
     displayName: 'member';
   };
   attributes: {
-    image: Attribute.Component<'image.image'>;
-    role: Attribute.String;
-    position: Attribute.String;
+    src: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    alt: Attribute.String;
+    name: Attribute.String;
     description: Attribute.Text;
+    position: Attribute.String;
+    role: Attribute.String;
   };
 }
 
@@ -72,6 +74,18 @@ export interface ServicePageHelp extends Schema.Component {
     title: Attribute.String;
     description: Attribute.Text;
     items: Attribute.Component<'comp.item2s', true>;
+  };
+}
+
+export interface ShareParagraphItem extends Schema.Component {
+  collectionName: 'components_share_paragraph_items';
+  info: {
+    displayName: 'ParagraphItem';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
   };
 }
 
@@ -228,6 +242,31 @@ export interface GmailGmail extends Schema.Component {
   };
 }
 
+export interface ContactUsPageMap extends Schema.Component {
+  collectionName: 'components_contact_us_page_maps';
+  info: {
+    displayName: 'map';
+  };
+  attributes: {
+    urlMap: Attribute.String;
+    logo: Attribute.Component<'image.image'>;
+    Address: Attribute.String;
+    phone: Attribute.String;
+    time: Attribute.String;
+  };
+}
+
+export interface ContactUsPageFolow extends Schema.Component {
+  collectionName: 'components_contact_us_page_folows';
+  info: {
+    displayName: 'folow';
+  };
+  attributes: {
+    image: Attribute.Component<'image.image'>;
+    icons: Attribute.Component<'item.icons', true>;
+  };
+}
+
 export interface CompWhyUsItems extends Schema.Component {
   collectionName: 'components_comp_why_us_items';
   info: {
@@ -321,6 +360,44 @@ export interface AddressAddress extends Schema.Component {
   };
 }
 
+export interface AboutUsPageTeam extends Schema.Component {
+  collectionName: 'components_about_us_page_teams';
+  info: {
+    displayName: 'team';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String;
+    title: Attribute.String;
+    description: Attribute.Text;
+    items: Attribute.Component<'image.image', true>;
+  };
+}
+
+export interface AboutUsPageTaget extends Schema.Component {
+  collectionName: 'components_about_us_page_tagets';
+  info: {
+    displayName: 'taget';
+  };
+  attributes: {
+    banner: Attribute.Component<'comp.item1s'>;
+    items: Attribute.Component<'share.paragraph-item', true>;
+  };
+}
+
+export interface AboutUsPageMeet extends Schema.Component {
+  collectionName: 'components_about_us_page_meets';
+  info: {
+    displayName: 'meet';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    name: Attribute.String;
+    members: Attribute.Component<'slide.member', true>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -330,6 +407,7 @@ declare module '@strapi/types' {
       'service-page.why-us': ServicePageWhyUs;
       'service-page.solution': ServicePageSolution;
       'service-page.help': ServicePageHelp;
+      'share.paragraph-item': ShareParagraphItem;
       'item.icons': ItemIcons;
       'item.head': ItemHead;
       'intro.intro': IntroIntro;
@@ -342,6 +420,8 @@ declare module '@strapi/types' {
       'home-page.customer': HomePageCustomer;
       'home-page.about-us': HomePageAboutUs;
       'gmail.gmail': GmailGmail;
+      'contact-us-page.map': ContactUsPageMap;
+      'contact-us-page.folow': ContactUsPageFolow;
       'comp.why-us-items': CompWhyUsItems;
       'comp.text': CompText;
       'comp.order': CompOrder;
@@ -349,6 +429,9 @@ declare module '@strapi/types' {
       'comp.item1s': CompItem1S;
       'comp.cart': CompCart;
       'address.address': AddressAddress;
+      'about-us-page.team': AboutUsPageTeam;
+      'about-us-page.taget': AboutUsPageTaget;
+      'about-us-page.meet': AboutUsPageMeet;
     }
   }
 }

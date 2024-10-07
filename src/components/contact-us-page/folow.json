@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_contact_us_page_folows",
+  "info": {
+    "displayName": "folow"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    },
+    "icons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "item.icons"
+    }
+  }
+}

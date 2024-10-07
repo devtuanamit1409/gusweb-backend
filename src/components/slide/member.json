@@ -5,19 +5,30 @@
   },
   "options": {},
   "attributes": {
-    "image": {
-      "type": "component",
-      "repeatable": false,
-      "component": "image.image"
+    "src": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     },
-    "role": {
+    "alt": {
       "type": "string"
     },
-    "position": {
+    "name": {
       "type": "string"
     },
     "description": {
       "type": "text"
+    },
+    "position": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
     }
   }
 }

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_about_us_page_tagets",
+  "info": {
+    "displayName": "taget"
+  },
+  "options": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "comp.item1s"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "share.paragraph-item"
+    }
+  }
+}
