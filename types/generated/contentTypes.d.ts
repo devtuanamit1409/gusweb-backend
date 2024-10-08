@@ -966,6 +966,13 @@ export interface ApiArticleArticle extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    isOutstanding: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1007,17 +1014,17 @@ export interface ApiBlogPageBlogPage extends Schema.SingleType {
     };
   };
   attributes: {
-    intro: Attribute.Component<'share.paragraph-item'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     category: Attribute.Relation<
       'api::blog-page.blog-page',
       'oneToOne',
       'api::category.category'
     >;
+    intro: Attribute.Component<'comp.why-us-items'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1224,10 +1231,30 @@ export interface ApiContactUsPageContactUsPage extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    intro: Attribute.Component<'comp.why-us-items'>;
-    map: Attribute.Component<'contact-us-page.map'>;
-    folow: Attribute.Component<'contact-us-page.folow'>;
+    intro: Attribute.Component<'comp.why-us-items'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    map: Attribute.Component<'contact-us-page.map'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    folow: Attribute.Component<'contact-us-page.folow'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1243,6 +1270,12 @@ export interface ApiContactUsPageContactUsPage extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::contact-us-page.contact-us-page',
+      'oneToMany',
+      'api::contact-us-page.contact-us-page'
+    >;
+    locale: Attribute.String;
   };
 }
 
