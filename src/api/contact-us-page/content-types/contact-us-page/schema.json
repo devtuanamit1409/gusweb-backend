@@ -10,24 +10,43 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "intro": {
       "type": "component",
       "repeatable": false,
-      "component": "comp.why-us-items"
+      "component": "comp.why-us-items",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "map": {
       "displayName": "map",
       "type": "component",
       "repeatable": false,
-      "component": "contact-us-page.map"
+      "component": "contact-us-page.map",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "folow": {
       "displayName": "folow",
       "type": "component",
       "repeatable": false,
-      "component": "contact-us-page.folow"
+      "component": "contact-us-page.folow",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

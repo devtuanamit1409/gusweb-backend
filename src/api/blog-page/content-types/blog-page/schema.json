@@ -16,20 +16,20 @@
     }
   },
   "attributes": {
-    "intro": {
-      "type": "component",
-      "repeatable": false,
-      "component": "share.paragraph-item",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "category": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::category.category"
+    },
+    "intro": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "comp.why-us-items"
     }
   }
 }
