@@ -1,7 +1,8 @@
 {
   "collectionName": "components_about_us_page_tagets",
   "info": {
-    "displayName": "taget"
+    "displayName": "taget",
+    "description": ""
   },
   "options": {},
   "attributes": {

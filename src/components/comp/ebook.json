@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_comp_ebooks",
+  "info": {
+    "displayName": "ebook",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "src": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "alt": {
+      "type": "string"
+    },
+    "titleBook": {
+      "type": "string"
+    },
+    "descBook": {
+      "type": "text"
+    },
+    "note": {
+      "type": "text"
+    },
+    "option": {
+      "type": "text"
+    },
+    "pdfFile": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

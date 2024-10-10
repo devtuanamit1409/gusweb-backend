@@ -1,22 +1,22 @@
 {
   "collectionName": "components_comp_item1s",
   "info": {
-    "displayName": "item1s"
+    "displayName": "item1s",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "src": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "alt": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "title": {
       "type": "string"

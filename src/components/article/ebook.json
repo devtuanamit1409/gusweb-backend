@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_article_ebooks",
+  "info": {
+    "displayName": "ebook"
+  },
+  "options": {},
+  "attributes": {
+    "intro": {
+      "type": "component",
+      "repeatable": false,
+      "component": "share.paragraph-item"
+    },
+    "ebook": {
+      "displayName": "ebook",
+      "type": "component",
+      "repeatable": false,
+      "component": "comp.ebook"
+    }
+  }
+}

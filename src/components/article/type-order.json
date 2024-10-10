@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_article_type_orders",
+  "info": {
+    "displayName": "typeOrder"
+  },
+  "options": {},
+  "attributes": {
+    "detail": {
+      "type": "richtext"
+    }
+  }
+}
