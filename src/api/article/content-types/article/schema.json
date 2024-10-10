@@ -26,14 +26,6 @@
       },
       "required": true
     },
-    "description": {
-      "type": "text",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "image": {
       "type": "component",
       "repeatable": false,
@@ -60,14 +52,6 @@
       },
       "required": true
     },
-    "detail": {
-      "type": "richtext",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "isOutstanding": {
       "pluginOptions": {
         "i18n": {
@@ -76,6 +60,28 @@
       },
       "type": "boolean",
       "default": false
+    },
+    "typeOrder": {
+      "displayName": "typeOrder",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "article.type-order"
+    },
+    "typeEbook": {
+      "displayName": "ebook",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "article.ebook"
     }
   }
 }

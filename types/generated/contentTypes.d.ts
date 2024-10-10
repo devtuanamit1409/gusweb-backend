@@ -935,12 +935,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    description: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     image: Attribute.Component<'image.image'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -960,12 +954,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    detail: Attribute.RichText &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     isOutstanding: Attribute.Boolean &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -973,6 +961,18 @@ export interface ApiArticleArticle extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<false>;
+    typeOrder: Attribute.Component<'article.type-order'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    typeEbook: Attribute.Component<'article.ebook'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1621,6 +1621,12 @@ export interface ApiSubCategorySubCategory extends Schema.CollectionType {
       'api::article.article'
     >;
     slug: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    banner: Attribute.Component<'image.image'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
