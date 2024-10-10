@@ -1356,6 +1356,37 @@ export interface ApiFooterFooter extends Schema.SingleType {
   };
 }
 
+export interface ApiGmailuserGmailuser extends Schema.CollectionType {
+  collectionName: 'gmailusers';
+  info: {
+    name: 'gmailuser';
+    singularName: 'gmailuser';
+    pluralName: 'gmailusers';
+    displayName: 'Gmail User';
+    description: 'Stores user emails from form submissions';
+  };
+  options: {
+    timestamps: true;
+  };
+  attributes: {
+    email: Attribute.String & Attribute.Required & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::gmailuser.gmailuser',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::gmailuser.gmailuser',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHeaderHeader extends Schema.SingleType {
   collectionName: 'headers';
   info: {
@@ -1683,6 +1714,7 @@ declare module '@strapi/types' {
       'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::contact-us-page.contact-us-page': ApiContactUsPageContactUsPage;
       'api::footer.footer': ApiFooterFooter;
+      'api::gmailuser.gmailuser': ApiGmailuserGmailuser;
       'api::header.header': ApiHeaderHeader;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::service-page.service-page': ApiServicePageServicePage;
