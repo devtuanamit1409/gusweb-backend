@@ -1,17 +1,5 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface ShareParagraphItem extends Schema.Component {
-  collectionName: 'components_share_paragraph_items';
-  info: {
-    displayName: 'ParagraphItem';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
-  };
-}
-
 export interface SlideMember extends Schema.Component {
   collectionName: 'components_slide_members';
   info: {
@@ -38,6 +26,18 @@ export interface SlideComments extends Schema.Component {
     position: Attribute.String;
     rating: Attribute.Integer;
     content: Attribute.Text;
+  };
+}
+
+export interface ShareParagraphItem extends Schema.Component {
+  collectionName: 'components_share_paragraph_items';
+  info: {
+    displayName: 'ParagraphItem';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
   };
 }
 
@@ -74,18 +74,6 @@ export interface ServicePageHelp extends Schema.Component {
     title: Attribute.String;
     description: Attribute.Text;
     items: Attribute.Component<'comp.item2s', true>;
-  };
-}
-
-export interface ShareParagraphItem extends Schema.Component {
-  collectionName: 'components_share_paragraph_items';
-  info: {
-    displayName: 'ParagraphItem';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
   };
 }
 
@@ -401,13 +389,12 @@ export interface AboutUsPageMeet extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'share.paragraph-item': ShareParagraphItem;
       'slide.member': SlideMember;
       'slide.comments': SlideComments;
+      'share.paragraph-item': ShareParagraphItem;
       'service-page.why-us': ServicePageWhyUs;
       'service-page.solution': ServicePageSolution;
       'service-page.help': ServicePageHelp;
-      'share.paragraph-item': ShareParagraphItem;
       'item.icons': ItemIcons;
       'item.head': ItemHead;
       'intro.intro': IntroIntro;
