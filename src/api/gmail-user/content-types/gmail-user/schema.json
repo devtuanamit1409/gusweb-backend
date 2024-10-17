@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gmail_users",
+  "info": {
+    "singularName": "gmail-user",
+    "pluralName": "gmail-users",
+    "displayName": "Gmail User",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "string"
+    },
+    "locale": {
+      "type": "string"
+    },
+    "titleArticle": {
+      "type": "string",
+      "unique": false
+    },
+    "urlPdf": {
+      "type": "string"
+    }
+  }
+}
