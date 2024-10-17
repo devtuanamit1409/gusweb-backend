@@ -910,6 +910,37 @@ export interface ApiAboutUsPageAboutUsPage extends Schema.SingleType {
   };
 }
 
+export interface ApiAdminGmailAdminGmail extends Schema.SingleType {
+  collectionName: 'admin_gmails';
+  info: {
+    singularName: 'admin-gmail';
+    pluralName: 'admin-gmails';
+    displayName: 'AdminGmail';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    gmail: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::admin-gmail.admin-gmail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::admin-gmail.admin-gmail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiArticleArticle extends Schema.CollectionType {
   collectionName: 'articles';
   info: {
@@ -961,13 +992,13 @@ export interface ApiArticleArticle extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<false>;
-    typeOrder: Attribute.Component<'article.type-order'> &
+    typeEbook: Attribute.Component<'article.ebook'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    typeEbook: Attribute.Component<'article.ebook'> &
+    detail: Attribute.RichText &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1279,6 +1310,43 @@ export interface ApiContactUsPageContactUsPage extends Schema.SingleType {
   };
 }
 
+export interface ApiContactUserContactUser extends Schema.CollectionType {
+  collectionName: 'contact_users';
+  info: {
+    singularName: 'contact-user';
+    pluralName: 'contact-users';
+    displayName: 'Contact User';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    phoneNumber: Attribute.String;
+    email: Attribute.String;
+    companyName: Attribute.String;
+    content: Attribute.Text;
+    minPrice: Attribute.Decimal;
+    maxPrice: Attribute.Decimal;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact-user.contact-user',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact-user.contact-user',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFooterFooter extends Schema.SingleType {
   collectionName: 'footers';
   info: {
@@ -1356,30 +1424,33 @@ export interface ApiFooterFooter extends Schema.SingleType {
   };
 }
 
-export interface ApiGmailuserGmailuser extends Schema.CollectionType {
-  collectionName: 'gmailusers';
+export interface ApiGmailUserGmailUser extends Schema.CollectionType {
+  collectionName: 'gmail_users';
   info: {
-    name: 'gmailuser';
-    singularName: 'gmailuser';
-    pluralName: 'gmailusers';
+    singularName: 'gmail-user';
+    pluralName: 'gmail-users';
     displayName: 'Gmail User';
-    description: 'Stores user emails from form submissions';
+    description: '';
   };
   options: {
-    timestamps: true;
+    draftAndPublish: true;
   };
   attributes: {
-    email: Attribute.String & Attribute.Required & Attribute.Unique;
+    email: Attribute.String;
+    locale: Attribute.String;
+    titleArticle: Attribute.String;
+    urlPdf: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::gmailuser.gmailuser',
+      'api::gmail-user.gmail-user',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::gmailuser.gmailuser',
+      'api::gmail-user.gmail-user',
       'oneToOne',
       'admin::user'
     > &
@@ -1707,14 +1778,16 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
+      'api::admin-gmail.admin-gmail': ApiAdminGmailAdminGmail;
       'api::article.article': ApiArticleArticle;
       'api::blog-page.blog-page': ApiBlogPageBlogPage;
       'api::case-studies-page.case-studies-page': ApiCaseStudiesPageCaseStudiesPage;
       'api::category.category': ApiCategoryCategory;
       'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::contact-us-page.contact-us-page': ApiContactUsPageContactUsPage;
+      'api::contact-user.contact-user': ApiContactUserContactUser;
       'api::footer.footer': ApiFooterFooter;
-      'api::gmailuser.gmailuser': ApiGmailuserGmailuser;
+      'api::gmail-user.gmail-user': ApiGmailUserGmailUser;
       'api::header.header': ApiHeaderHeader;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::service-page.service-page': ApiServicePageServicePage;

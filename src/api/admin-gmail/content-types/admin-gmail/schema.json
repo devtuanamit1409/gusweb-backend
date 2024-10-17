@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "admin_gmails",
+  "info": {
+    "singularName": "admin-gmail",
+    "pluralName": "admin-gmails",
+    "displayName": "AdminGmail",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "gmail": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contact_users",
+  "info": {
+    "singularName": "contact-user",
+    "pluralName": "contact-users",
+    "displayName": "Contact User",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "companyName": {
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    },
+    "minPrice": {
+      "type": "decimal"
+    },
+    "maxPrice": {
+      "type": "decimal"
+    }
+  }
+}
