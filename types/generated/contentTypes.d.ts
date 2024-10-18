@@ -935,12 +935,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    description: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     image: Attribute.Component<'image.image'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -960,7 +954,20 @@ export interface ApiArticleArticle extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    detail: Attribute.RichText &
+    isOutstanding: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<false>;
+    typeOrder: Attribute.Component<'article.type-order'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    typeEbook: Attribute.Component<'article.ebook'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1007,17 +1014,17 @@ export interface ApiBlogPageBlogPage extends Schema.SingleType {
     };
   };
   attributes: {
-    intro: Attribute.Component<'share.paragraph-item'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     category: Attribute.Relation<
       'api::blog-page.blog-page',
       'oneToOne',
       'api::category.category'
     >;
+    intro: Attribute.Component<'comp.why-us-items'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1224,10 +1231,30 @@ export interface ApiContactUsPageContactUsPage extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    intro: Attribute.Component<'comp.why-us-items'>;
-    map: Attribute.Component<'contact-us-page.map'>;
-    folow: Attribute.Component<'contact-us-page.folow'>;
+    intro: Attribute.Component<'comp.why-us-items'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    map: Attribute.Component<'contact-us-page.map'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    folow: Attribute.Component<'contact-us-page.folow'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1243,6 +1270,12 @@ export interface ApiContactUsPageContactUsPage extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::contact-us-page.contact-us-page',
+      'oneToMany',
+      'api::contact-us-page.contact-us-page'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1320,6 +1353,37 @@ export interface ApiFooterFooter extends Schema.SingleType {
       'api::footer.footer'
     >;
     locale: Attribute.String;
+  };
+}
+
+export interface ApiGmailuserGmailuser extends Schema.CollectionType {
+  collectionName: 'gmailusers';
+  info: {
+    name: 'gmailuser';
+    singularName: 'gmailuser';
+    pluralName: 'gmailusers';
+    displayName: 'Gmail User';
+    description: 'Stores user emails from form submissions';
+  };
+  options: {
+    timestamps: true;
+  };
+  attributes: {
+    email: Attribute.String & Attribute.Required & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::gmailuser.gmailuser',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::gmailuser.gmailuser',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
   };
 }
 
@@ -1593,6 +1657,12 @@ export interface ApiSubCategorySubCategory extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    banner: Attribute.Component<'image.image'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1644,6 +1714,7 @@ declare module '@strapi/types' {
       'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::contact-us-page.contact-us-page': ApiContactUsPageContactUsPage;
       'api::footer.footer': ApiFooterFooter;
+      'api::gmailuser.gmailuser': ApiGmailuserGmailuser;
       'api::header.header': ApiHeaderHeader;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::service-page.service-page': ApiServicePageServicePage;

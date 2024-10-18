@@ -1,7 +1,8 @@
 {
   "collectionName": "components_contact_us_page_maps",
   "info": {
-    "displayName": "map"
+    "displayName": "map",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -13,7 +14,7 @@
       "repeatable": false,
       "component": "image.image"
     },
-    "Address": {
+    "address": {
       "type": "string"
     },
     "phone": {

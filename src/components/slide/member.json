@@ -1,22 +1,22 @@
 {
   "collectionName": "components_slide_members",
   "info": {
-    "displayName": "member"
+    "displayName": "member",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "src": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "alt": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "name": {
       "type": "string"
