@@ -357,7 +357,7 @@ export interface CompEbook extends Schema.Component {
     descBook: Attribute.Text;
     note: Attribute.Text;
     option: Attribute.Text;
-    pdfFile: Attribute.Media<'files'> & Attribute.Required;
+    pdfFile: Attribute.Media<'files'>;
   };
 }
 
