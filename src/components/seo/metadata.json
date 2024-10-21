@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_seo_metadata",
+  "info": {
+    "displayName": "metadata",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "url": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "article"
+      ]
+    },
+    "images": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    }
+  }
+}

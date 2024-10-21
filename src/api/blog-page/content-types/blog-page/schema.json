@@ -30,6 +30,16 @@
         }
       },
       "component": "comp.why-us-items"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "seo.metadata"
     }
   }
 }

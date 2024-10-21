@@ -886,6 +886,12 @@ export interface ApiAboutUsPageAboutUsPage extends Schema.SingleType {
           localized: true;
         };
       }>;
+    seo: Attribute.Component<'seo.metadata'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1004,6 +1010,12 @@ export interface ApiArticleArticle extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    seo: Attribute.Component<'seo.metadata'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1051,6 +1063,12 @@ export interface ApiBlogPageBlogPage extends Schema.SingleType {
       'api::category.category'
     >;
     intro: Attribute.Component<'comp.why-us-items'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'seo.metadata'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1108,6 +1126,12 @@ export interface ApiCaseStudiesPageCaseStudiesPage extends Schema.SingleType {
       'oneToOne',
       'api::category.category'
     >;
+    seo: Attribute.Component<'seo.metadata'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1281,6 +1305,12 @@ export interface ApiContactUsPageContactUsPage extends Schema.SingleType {
         };
       }>;
     folow: Attribute.Component<'contact-us-page.folow'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'seo.metadata'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1582,6 +1612,12 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
           localized: true;
         };
       }>;
+    seo: Attribute.Component<'seo.metadata'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1660,6 +1696,12 @@ export interface ApiServicePageServicePage extends Schema.SingleType {
         };
       }>;
     solution: Attribute.Component<'service-page.solution'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'seo.metadata'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
