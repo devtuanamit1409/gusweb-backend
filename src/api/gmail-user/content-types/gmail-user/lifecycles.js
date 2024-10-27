@@ -78,7 +78,6 @@ module.exports = {
       });
     };
 
-    // Hàm gửi email cho admin
     const sendManagerEmail = async (managerEmail) => {
       let transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
