@@ -89,6 +89,14 @@
         }
       },
       "component": "seo.metadata"
+    },
+    "description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text"
     }
   }
 }

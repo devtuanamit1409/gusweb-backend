@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_comp_items3s",
+  "info": {
+    "displayName": "items3"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "src": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "alt": {
+      "type": "string"
+    },
+    "customer": {
+      "type": "component",
+      "repeatable": true,
+      "component": "image.image"
+    },
+    "te": {
+      "type": "component",
+      "repeatable": true,
+      "component": "image.image"
+    }
+  }
+}
