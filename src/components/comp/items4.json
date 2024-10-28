@@ -1,0 +1,51 @@
+{
+  "collectionName": "components_comp_items4s",
+  "info": {
+    "displayName": "items4",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "customer": {
+      "type": "component",
+      "repeatable": true,
+      "component": "image.image"
+    },
+    "src": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "alt": {
+      "type": "string"
+    },
+    "technology": {
+      "type": "component",
+      "repeatable": true,
+      "component": "image.image"
+    },
+    "system": {
+      "type": "component",
+      "repeatable": true,
+      "component": "image.image"
+    },
+    "challenge": {
+      "type": "text"
+    },
+    "solution": {
+      "type": "text"
+    }
+  }
+}
