@@ -30,33 +30,6 @@ export interface SlideComments extends Schema.Component {
   };
 }
 
-export interface ShareParagraphItem extends Schema.Component {
-  collectionName: 'components_share_paragraph_items';
-  info: {
-    displayName: 'ParagraphItem';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
-  };
-}
-
-export interface SeoMetadata extends Schema.Component {
-  collectionName: 'components_seo_metadata';
-  info: {
-    displayName: 'metadata';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
-    url: Attribute.String;
-    type: Attribute.Enumeration<['article']>;
-    images: Attribute.Component<'image.image'>;
-  };
-}
-
 export interface ServicePageWhyUs extends Schema.Component {
   collectionName: 'components_service_page_whyuses';
   info: {
@@ -93,6 +66,46 @@ export interface ServicePageHelp extends Schema.Component {
   };
 }
 
+export interface ShareParagraphItem extends Schema.Component {
+  collectionName: 'components_share_paragraph_items';
+  info: {
+    displayName: 'ParagraphItem';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
+export interface SeoMetadata extends Schema.Component {
+  collectionName: 'components_seo_metadata';
+  info: {
+    displayName: 'metadata';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    url: Attribute.String;
+    type: Attribute.Enumeration<['article']>;
+    images: Attribute.Component<'image.image'>;
+  };
+}
+
+export interface IntroIntro extends Schema.Component {
+  collectionName: 'components_intro_intros';
+  info: {
+    displayName: 'Intro';
+  };
+  attributes: {
+    image: Attribute.Component<'image.image'>;
+    title: Attribute.String;
+    subTitle: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
 export interface ItemIcons extends Schema.Component {
   collectionName: 'components_item_icons';
   info: {
@@ -115,31 +128,6 @@ export interface ItemHead extends Schema.Component {
   attributes: {
     title: Attribute.String;
     slug: Attribute.String;
-  };
-}
-
-export interface IntroIntro extends Schema.Component {
-  collectionName: 'components_intro_intros';
-  info: {
-    displayName: 'Intro';
-  };
-  attributes: {
-    image: Attribute.Component<'image.image'>;
-    title: Attribute.String;
-    subTitle: Attribute.String;
-    description: Attribute.Text;
-  };
-}
-
-export interface ImageImage extends Schema.Component {
-  collectionName: 'components_image_images';
-  info: {
-    displayName: 'image';
-    description: '';
-  };
-  attributes: {
-    src: Attribute.Media<'images'> & Attribute.Required;
-    alt: Attribute.String & Attribute.Required;
   };
 }
 
@@ -189,6 +177,7 @@ export interface HomePageProject extends Schema.Component {
   };
   attributes: {
     image: Attribute.Component<'image.image'>;
+    items: Attribute.Component<'comp.items5', true>;
   };
 }
 
@@ -235,6 +224,18 @@ export interface HomePageAboutUs extends Schema.Component {
   };
 }
 
+export interface ImageImage extends Schema.Component {
+  collectionName: 'components_image_images';
+  info: {
+    displayName: 'image';
+    description: '';
+  };
+  attributes: {
+    src: Attribute.Media<'images'> & Attribute.Required;
+    alt: Attribute.String & Attribute.Required;
+  };
+}
+
 export interface GmailGmail extends Schema.Component {
   collectionName: 'components_gmail_gmails';
   info: {
@@ -271,6 +272,27 @@ export interface ContactUsPageFolow extends Schema.Component {
   attributes: {
     image: Attribute.Component<'image.image'>;
     icons: Attribute.Component<'item.icons', true>;
+  };
+}
+
+export interface ArticleTypeOrder extends Schema.Component {
+  collectionName: 'components_article_type_orders';
+  info: {
+    displayName: 'typeOrder';
+  };
+  attributes: {
+    detail: Attribute.RichText;
+  };
+}
+
+export interface ArticleEbook extends Schema.Component {
+  collectionName: 'components_article_ebooks';
+  info: {
+    displayName: 'ebook';
+  };
+  attributes: {
+    intro: Attribute.Component<'share.paragraph-item'>;
+    ebook: Attribute.Component<'comp.ebook'>;
   };
 }
 
@@ -314,6 +336,43 @@ export interface CompOrder extends Schema.Component {
     description: Attribute.Text;
     price: Attribute.Float;
     percent: Attribute.Float;
+  };
+}
+
+export interface CompItems5 extends Schema.Component {
+  collectionName: 'components_comp_items5s';
+  info: {
+    displayName: 'items5';
+    description: '';
+  };
+  attributes: {
+    customer: Attribute.Component<'image.image', true>;
+    technology: Attribute.Component<'image.image', true>;
+    system: Attribute.Component<'image.image', true>;
+    title: Attribute.String;
+    description: Attribute.Text;
+    challenge: Attribute.Text;
+    solution: Attribute.Text;
+    src: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface CompItems4 extends Schema.Component {
+  collectionName: 'components_comp_items4s';
+  info: {
+    displayName: 'items4';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    customer: Attribute.Component<'image.image', true>;
+    src: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    alt: Attribute.String;
+    technology: Attribute.Component<'image.image', true>;
+    system: Attribute.Component<'image.image', true>;
+    challenge: Attribute.Text;
+    solution: Attribute.Text;
   };
 }
 
@@ -391,27 +450,6 @@ export interface CompCart extends Schema.Component {
   };
 }
 
-export interface ArticleTypeOrder extends Schema.Component {
-  collectionName: 'components_article_type_orders';
-  info: {
-    displayName: 'typeOrder';
-  };
-  attributes: {
-    detail: Attribute.RichText;
-  };
-}
-
-export interface ArticleEbook extends Schema.Component {
-  collectionName: 'components_article_ebooks';
-  info: {
-    displayName: 'ebook';
-  };
-  attributes: {
-    intro: Attribute.Component<'share.paragraph-item'>;
-    ebook: Attribute.Component<'comp.ebook'>;
-  };
-}
-
 export interface AddressAddress extends Schema.Component {
   collectionName: 'components_address_addresses';
   info: {
@@ -468,15 +506,14 @@ declare module '@strapi/types' {
     export interface Components {
       'slide.member': SlideMember;
       'slide.comments': SlideComments;
-      'share.paragraph-item': ShareParagraphItem;
-      'seo.metadata': SeoMetadata;
       'service-page.why-us': ServicePageWhyUs;
       'service-page.solution': ServicePageSolution;
       'service-page.help': ServicePageHelp;
+      'share.paragraph-item': ShareParagraphItem;
+      'seo.metadata': SeoMetadata;
+      'intro.intro': IntroIntro;
       'item.icons': ItemIcons;
       'item.head': ItemHead;
-      'intro.intro': IntroIntro;
-      'image.image': ImageImage;
       'home-page.working': HomePageWorking;
       'home-page.why-us': HomePageWhyUs;
       'home-page.web-us': HomePageWebUs;
@@ -484,19 +521,22 @@ declare module '@strapi/types' {
       'home-page.main': HomePageMain;
       'home-page.customer': HomePageCustomer;
       'home-page.about-us': HomePageAboutUs;
+      'image.image': ImageImage;
       'gmail.gmail': GmailGmail;
       'contact-us-page.map': ContactUsPageMap;
       'contact-us-page.folow': ContactUsPageFolow;
+      'article.type-order': ArticleTypeOrder;
+      'article.ebook': ArticleEbook;
       'comp.why-us-items': CompWhyUsItems;
       'comp.text': CompText;
       'comp.order': CompOrder;
+      'comp.items5': CompItems5;
+      'comp.items4': CompItems4;
       'comp.items3': CompItems3;
       'comp.item2s': CompItem2S;
       'comp.item1s': CompItem1S;
       'comp.ebook': CompEbook;
       'comp.cart': CompCart;
-      'article.type-order': ArticleTypeOrder;
-      'article.ebook': ArticleEbook;
       'address.address': AddressAddress;
       'about-us-page.team': AboutUsPageTeam;
       'about-us-page.taget': AboutUsPageTaget;

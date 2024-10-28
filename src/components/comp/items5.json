@@ -1,0 +1,47 @@
+{
+  "collectionName": "components_comp_items5s",
+  "info": {
+    "displayName": "items5",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "customer": {
+      "type": "component",
+      "repeatable": true,
+      "component": "image.image"
+    },
+    "technology": {
+      "type": "component",
+      "repeatable": true,
+      "component": "image.image"
+    },
+    "system": {
+      "type": "component",
+      "repeatable": true,
+      "component": "image.image"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "challenge": {
+      "type": "text"
+    },
+    "solution": {
+      "type": "text"
+    },
+    "src": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
