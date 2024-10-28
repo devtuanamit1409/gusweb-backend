@@ -275,6 +275,27 @@ export interface ContactUsPageFolow extends Schema.Component {
   };
 }
 
+export interface ArticleTypeOrder extends Schema.Component {
+  collectionName: 'components_article_type_orders';
+  info: {
+    displayName: 'typeOrder';
+  };
+  attributes: {
+    detail: Attribute.RichText;
+  };
+}
+
+export interface ArticleEbook extends Schema.Component {
+  collectionName: 'components_article_ebooks';
+  info: {
+    displayName: 'ebook';
+  };
+  attributes: {
+    intro: Attribute.Component<'share.paragraph-item'>;
+    ebook: Attribute.Component<'comp.ebook'>;
+  };
+}
+
 export interface CompWhyUsItems extends Schema.Component {
   collectionName: 'components_comp_why_us_items';
   info: {
@@ -429,27 +450,6 @@ export interface CompCart extends Schema.Component {
   };
 }
 
-export interface ArticleTypeOrder extends Schema.Component {
-  collectionName: 'components_article_type_orders';
-  info: {
-    displayName: 'typeOrder';
-  };
-  attributes: {
-    detail: Attribute.RichText;
-  };
-}
-
-export interface ArticleEbook extends Schema.Component {
-  collectionName: 'components_article_ebooks';
-  info: {
-    displayName: 'ebook';
-  };
-  attributes: {
-    intro: Attribute.Component<'share.paragraph-item'>;
-    ebook: Attribute.Component<'comp.ebook'>;
-  };
-}
-
 export interface AddressAddress extends Schema.Component {
   collectionName: 'components_address_addresses';
   info: {
@@ -525,6 +525,8 @@ declare module '@strapi/types' {
       'gmail.gmail': GmailGmail;
       'contact-us-page.map': ContactUsPageMap;
       'contact-us-page.folow': ContactUsPageFolow;
+      'article.type-order': ArticleTypeOrder;
+      'article.ebook': ArticleEbook;
       'comp.why-us-items': CompWhyUsItems;
       'comp.text': CompText;
       'comp.order': CompOrder;
@@ -535,8 +537,6 @@ declare module '@strapi/types' {
       'comp.item1s': CompItem1S;
       'comp.ebook': CompEbook;
       'comp.cart': CompCart;
-      'article.type-order': ArticleTypeOrder;
-      'article.ebook': ArticleEbook;
       'address.address': AddressAddress;
       'about-us-page.team': AboutUsPageTeam;
       'about-us-page.taget': AboutUsPageTaget;
