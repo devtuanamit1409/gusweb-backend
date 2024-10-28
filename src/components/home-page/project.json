@@ -12,10 +12,10 @@
       "component": "image.image"
     },
     "items": {
-      "displayName": "items4",
+      "displayName": "items5",
       "type": "component",
       "repeatable": true,
-      "component": "comp.items4"
+      "component": "comp.items5"
     }
   }
 }

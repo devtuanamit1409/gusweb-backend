@@ -1,8 +1,7 @@
 {
-  "collectionName": "components_comp_items4s",
+  "collectionName": "components_comp_items3s",
   "info": {
-    "displayName": "items4",
-    "description": ""
+    "displayName": "items3"
   },
   "options": {},
   "attributes": {
@@ -11,11 +10,6 @@
     },
     "description": {
       "type": "text"
-    },
-    "customer": {
-      "type": "component",
-      "repeatable": true,
-      "component": "image.image"
     },
     "src": {
       "allowedTypes": [
@@ -30,21 +24,15 @@
     "alt": {
       "type": "string"
     },
-    "technology": {
+    "customer": {
       "type": "component",
       "repeatable": true,
       "component": "image.image"
     },
-    "system": {
+    "te": {
       "type": "component",
       "repeatable": true,
       "component": "image.image"
-    },
-    "challenge": {
-      "type": "text"
-    },
-    "solution": {
-      "type": "text"
     }
   }
 }
