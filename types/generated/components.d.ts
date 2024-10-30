@@ -30,6 +30,33 @@ export interface SlideComments extends Schema.Component {
   };
 }
 
+export interface ShareParagraphItem extends Schema.Component {
+  collectionName: 'components_share_paragraph_items';
+  info: {
+    displayName: 'ParagraphItem';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
+export interface SeoMetadata extends Schema.Component {
+  collectionName: 'components_seo_metadata';
+  info: {
+    displayName: 'metadata';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    url: Attribute.String;
+    type: Attribute.Enumeration<['article']>;
+    images: Attribute.Component<'image.image'>;
+  };
+}
+
 export interface ServicePageWhyUs extends Schema.Component {
   collectionName: 'components_service_page_whyuses';
   info: {
@@ -66,46 +93,6 @@ export interface ServicePageHelp extends Schema.Component {
   };
 }
 
-export interface ShareParagraphItem extends Schema.Component {
-  collectionName: 'components_share_paragraph_items';
-  info: {
-    displayName: 'ParagraphItem';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
-  };
-}
-
-export interface SeoMetadata extends Schema.Component {
-  collectionName: 'components_seo_metadata';
-  info: {
-    displayName: 'metadata';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
-    url: Attribute.String;
-    type: Attribute.Enumeration<['article']>;
-    images: Attribute.Component<'image.image'>;
-  };
-}
-
-export interface IntroIntro extends Schema.Component {
-  collectionName: 'components_intro_intros';
-  info: {
-    displayName: 'Intro';
-  };
-  attributes: {
-    image: Attribute.Component<'image.image'>;
-    title: Attribute.String;
-    subTitle: Attribute.String;
-    description: Attribute.Text;
-  };
-}
-
 export interface ItemIcons extends Schema.Component {
   collectionName: 'components_item_icons';
   info: {
@@ -128,6 +115,43 @@ export interface ItemHead extends Schema.Component {
   attributes: {
     title: Attribute.String;
     slug: Attribute.String;
+  };
+}
+
+export interface IntroIntro extends Schema.Component {
+  collectionName: 'components_intro_intros';
+  info: {
+    displayName: 'Intro';
+  };
+  attributes: {
+    image: Attribute.Component<'image.image'>;
+    title: Attribute.String;
+    subTitle: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
+export interface ImageImage extends Schema.Component {
+  collectionName: 'components_image_images';
+  info: {
+    displayName: 'image';
+    description: '';
+  };
+  attributes: {
+    src: Attribute.Media<'images'> & Attribute.Required;
+    alt: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface GmailGmail extends Schema.Component {
+  collectionName: 'components_gmail_gmails';
+  info: {
+    displayName: 'Gmail';
+  };
+  attributes: {
+    image: Attribute.Component<'image.image'>;
+    content: Attribute.String;
+    tel: Attribute.String;
   };
 }
 
@@ -221,30 +245,6 @@ export interface HomePageAboutUs extends Schema.Component {
   attributes: {
     image: Attribute.Component<'image.image'>;
     title: Attribute.String;
-  };
-}
-
-export interface ImageImage extends Schema.Component {
-  collectionName: 'components_image_images';
-  info: {
-    displayName: 'image';
-    description: '';
-  };
-  attributes: {
-    src: Attribute.Media<'images'> & Attribute.Required;
-    alt: Attribute.String & Attribute.Required;
-  };
-}
-
-export interface GmailGmail extends Schema.Component {
-  collectionName: 'components_gmail_gmails';
-  info: {
-    displayName: 'Gmail';
-  };
-  attributes: {
-    image: Attribute.Component<'image.image'>;
-    content: Attribute.String;
-    tel: Attribute.String;
   };
 }
 
@@ -506,14 +506,16 @@ declare module '@strapi/types' {
     export interface Components {
       'slide.member': SlideMember;
       'slide.comments': SlideComments;
+      'share.paragraph-item': ShareParagraphItem;
+      'seo.metadata': SeoMetadata;
       'service-page.why-us': ServicePageWhyUs;
       'service-page.solution': ServicePageSolution;
       'service-page.help': ServicePageHelp;
-      'share.paragraph-item': ShareParagraphItem;
-      'seo.metadata': SeoMetadata;
-      'intro.intro': IntroIntro;
       'item.icons': ItemIcons;
       'item.head': ItemHead;
+      'intro.intro': IntroIntro;
+      'image.image': ImageImage;
+      'gmail.gmail': GmailGmail;
       'home-page.working': HomePageWorking;
       'home-page.why-us': HomePageWhyUs;
       'home-page.web-us': HomePageWebUs;
@@ -521,8 +523,6 @@ declare module '@strapi/types' {
       'home-page.main': HomePageMain;
       'home-page.customer': HomePageCustomer;
       'home-page.about-us': HomePageAboutUs;
-      'image.image': ImageImage;
-      'gmail.gmail': GmailGmail;
       'contact-us-page.map': ContactUsPageMap;
       'contact-us-page.folow': ContactUsPageFolow;
       'article.type-order': ArticleTypeOrder;
