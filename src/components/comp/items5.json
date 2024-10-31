@@ -34,14 +34,22 @@
       "type": "text"
     },
     "src": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
+      ]
+    },
+    "file": {
+      "allowedTypes": [
+        "files"
       ],
       "type": "media",
-      "multiple": false
+      "multiple": true
     }
   }
 }

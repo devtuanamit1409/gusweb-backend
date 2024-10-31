@@ -18,14 +18,15 @@
       "component": "image.image"
     },
     "src": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "alt": {
       "type": "string"
