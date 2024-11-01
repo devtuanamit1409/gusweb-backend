@@ -31,6 +31,33 @@ export interface SlideComments extends Schema.Component {
   };
 }
 
+export interface ShareParagraphItem extends Schema.Component {
+  collectionName: 'components_share_paragraph_items';
+  info: {
+    displayName: 'ParagraphItem';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
+export interface SeoMetadata extends Schema.Component {
+  collectionName: 'components_seo_metadata';
+  info: {
+    displayName: 'metadata';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    url: Attribute.String;
+    type: Attribute.Enumeration<['article']>;
+    images: Attribute.Component<'image.image'>;
+  };
+}
+
 export interface ServicePageWhyUs extends Schema.Component {
   collectionName: 'components_service_page_whyuses';
   info: {
@@ -64,33 +91,6 @@ export interface ServicePageHelp extends Schema.Component {
     title: Attribute.String;
     description: Attribute.Text;
     items: Attribute.Component<'comp.item2s', true>;
-  };
-}
-
-export interface ShareParagraphItem extends Schema.Component {
-  collectionName: 'components_share_paragraph_items';
-  info: {
-    displayName: 'ParagraphItem';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
-  };
-}
-
-export interface SeoMetadata extends Schema.Component {
-  collectionName: 'components_seo_metadata';
-  info: {
-    displayName: 'metadata';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
-    url: Attribute.String;
-    type: Attribute.Enumeration<['article']>;
-    images: Attribute.Component<'image.image'>;
   };
 }
 
@@ -452,6 +452,18 @@ export interface ArticleEbook extends Schema.Component {
   };
 }
 
+export interface AddressAddress extends Schema.Component {
+  collectionName: 'components_address_addresses';
+  info: {
+    displayName: 'Address';
+  };
+  attributes: {
+    image: Attribute.Component<'image.image'>;
+    title: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
 export interface AboutUsPageTeam extends Schema.Component {
   collectionName: 'components_about_us_page_teams';
   info: {
@@ -491,28 +503,16 @@ export interface AboutUsPageMeet extends Schema.Component {
   };
 }
 
-export interface AddressAddress extends Schema.Component {
-  collectionName: 'components_address_addresses';
-  info: {
-    displayName: 'Address';
-  };
-  attributes: {
-    image: Attribute.Component<'image.image'>;
-    title: Attribute.String;
-    description: Attribute.Text;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'slide.member': SlideMember;
       'slide.comments': SlideComments;
+      'share.paragraph-item': ShareParagraphItem;
+      'seo.metadata': SeoMetadata;
       'service-page.why-us': ServicePageWhyUs;
       'service-page.solution': ServicePageSolution;
       'service-page.help': ServicePageHelp;
-      'share.paragraph-item': ShareParagraphItem;
-      'seo.metadata': SeoMetadata;
       'item.icons': ItemIcons;
       'item.head': ItemHead;
       'intro.intro': IntroIntro;
@@ -539,10 +539,10 @@ declare module '@strapi/types' {
       'comp.cart': CompCart;
       'article.type-order': ArticleTypeOrder;
       'article.ebook': ArticleEbook;
+      'address.address': AddressAddress;
       'about-us-page.team': AboutUsPageTeam;
       'about-us-page.taget': AboutUsPageTaget;
       'about-us-page.meet': AboutUsPageMeet;
-      'address.address': AddressAddress;
     }
   }
 }
