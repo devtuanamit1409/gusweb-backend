@@ -44,8 +44,12 @@
         "audios"
       ]
     },
-    "alt": {
-      "type": "string"
+    "file": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
