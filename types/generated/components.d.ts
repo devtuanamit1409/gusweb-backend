@@ -43,28 +43,18 @@ export interface ShareParagraphItem extends Schema.Component {
   };
 }
 
-export interface ItemIcons extends Schema.Component {
-  collectionName: 'components_item_icons';
+export interface SeoMetadata extends Schema.Component {
+  collectionName: 'components_seo_metadata';
   info: {
-    displayName: 'icons';
-    description: '';
-  };
-  attributes: {
-    src: Attribute.Media<'images'> & Attribute.Required;
-    alt: Attribute.String & Attribute.Required;
-    slug: Attribute.String;
-  };
-}
-
-export interface ItemHead extends Schema.Component {
-  collectionName: 'components_item_heads';
-  info: {
-    displayName: 'head';
+    displayName: 'metadata';
     description: '';
   };
   attributes: {
     title: Attribute.String;
-    slug: Attribute.String;
+    description: Attribute.Text;
+    url: Attribute.String;
+    type: Attribute.Enumeration<['article']>;
+    images: Attribute.Component<'image.image'>;
   };
 }
 
@@ -104,18 +94,28 @@ export interface ServicePageHelp extends Schema.Component {
   };
 }
 
-export interface SeoMetadata extends Schema.Component {
-  collectionName: 'components_seo_metadata';
+export interface ItemIcons extends Schema.Component {
+  collectionName: 'components_item_icons';
   info: {
-    displayName: 'metadata';
+    displayName: 'icons';
+    description: '';
+  };
+  attributes: {
+    src: Attribute.Media<'images'> & Attribute.Required;
+    alt: Attribute.String & Attribute.Required;
+    slug: Attribute.String;
+  };
+}
+
+export interface ItemHead extends Schema.Component {
+  collectionName: 'components_item_heads';
+  info: {
+    displayName: 'head';
     description: '';
   };
   attributes: {
     title: Attribute.String;
-    description: Attribute.Text;
-    url: Attribute.String;
-    type: Attribute.Enumeration<['article']>;
-    images: Attribute.Component<'image.image'>;
+    slug: Attribute.String;
   };
 }
 
@@ -464,6 +464,18 @@ export interface AddressAddress extends Schema.Component {
   };
 }
 
+export interface AddressAddress extends Schema.Component {
+  collectionName: 'components_address_addresses';
+  info: {
+    displayName: 'Address';
+  };
+  attributes: {
+    image: Attribute.Component<'image.image'>;
+    title: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
 export interface AboutUsPageTeam extends Schema.Component {
   collectionName: 'components_about_us_page_teams';
   info: {
@@ -509,12 +521,12 @@ declare module '@strapi/types' {
       'slide.member': SlideMember;
       'slide.comments': SlideComments;
       'share.paragraph-item': ShareParagraphItem;
-      'item.icons': ItemIcons;
-      'item.head': ItemHead;
+      'seo.metadata': SeoMetadata;
       'service-page.why-us': ServicePageWhyUs;
       'service-page.solution': ServicePageSolution;
       'service-page.help': ServicePageHelp;
-      'seo.metadata': SeoMetadata;
+      'item.icons': ItemIcons;
+      'item.head': ItemHead;
       'intro.intro': IntroIntro;
       'image.image': ImageImage;
       'home-page.working': HomePageWorking;
@@ -539,6 +551,8 @@ declare module '@strapi/types' {
       'comp.item1s': CompItem1S;
       'comp.ebook': CompEbook;
       'comp.cart': CompCart;
+      'article.type-order': ArticleTypeOrder;
+      'article.ebook': ArticleEbook;
       'address.address': AddressAddress;
       'about-us-page.team': AboutUsPageTeam;
       'about-us-page.taget': AboutUsPageTaget;
