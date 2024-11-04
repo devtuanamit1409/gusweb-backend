@@ -31,6 +31,43 @@ export interface SlideComments extends Schema.Component {
   };
 }
 
+export interface ShareParagraphItem extends Schema.Component {
+  collectionName: 'components_share_paragraph_items';
+  info: {
+    displayName: 'ParagraphItem';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
+export interface ItemIcons extends Schema.Component {
+  collectionName: 'components_item_icons';
+  info: {
+    displayName: 'icons';
+    description: '';
+  };
+  attributes: {
+    src: Attribute.Media<'images'> & Attribute.Required;
+    alt: Attribute.String & Attribute.Required;
+    slug: Attribute.String;
+  };
+}
+
+export interface ItemHead extends Schema.Component {
+  collectionName: 'components_item_heads';
+  info: {
+    displayName: 'head';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    slug: Attribute.String;
+  };
+}
+
 export interface ServicePageWhyUs extends Schema.Component {
   collectionName: 'components_service_page_whyuses';
   info: {
@@ -67,18 +104,6 @@ export interface ServicePageHelp extends Schema.Component {
   };
 }
 
-export interface ShareParagraphItem extends Schema.Component {
-  collectionName: 'components_share_paragraph_items';
-  info: {
-    displayName: 'ParagraphItem';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
-  };
-}
-
 export interface SeoMetadata extends Schema.Component {
   collectionName: 'components_seo_metadata';
   info: {
@@ -91,31 +116,6 @@ export interface SeoMetadata extends Schema.Component {
     url: Attribute.String;
     type: Attribute.Enumeration<['article']>;
     images: Attribute.Component<'image.image'>;
-  };
-}
-
-export interface ItemIcons extends Schema.Component {
-  collectionName: 'components_item_icons';
-  info: {
-    displayName: 'icons';
-    description: '';
-  };
-  attributes: {
-    src: Attribute.Media<'images'> & Attribute.Required;
-    alt: Attribute.String & Attribute.Required;
-    slug: Attribute.String;
-  };
-}
-
-export interface ItemHead extends Schema.Component {
-  collectionName: 'components_item_heads';
-  info: {
-    displayName: 'head';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    slug: Attribute.String;
   };
 }
 
@@ -276,6 +276,27 @@ export interface ContactUsPageFolow extends Schema.Component {
   };
 }
 
+export interface ArticleTypeOrder extends Schema.Component {
+  collectionName: 'components_article_type_orders';
+  info: {
+    displayName: 'typeOrder';
+  };
+  attributes: {
+    detail: Attribute.RichText;
+  };
+}
+
+export interface ArticleEbook extends Schema.Component {
+  collectionName: 'components_article_ebooks';
+  info: {
+    displayName: 'ebook';
+  };
+  attributes: {
+    intro: Attribute.Component<'share.paragraph-item'>;
+    ebook: Attribute.Component<'comp.ebook'>;
+  };
+}
+
 export interface CompWhyUsItems extends Schema.Component {
   collectionName: 'components_comp_why_us_items';
   info: {
@@ -431,24 +452,15 @@ export interface CompCart extends Schema.Component {
   };
 }
 
-export interface ArticleTypeOrder extends Schema.Component {
-  collectionName: 'components_article_type_orders';
+export interface AddressAddress extends Schema.Component {
+  collectionName: 'components_address_addresses';
   info: {
-    displayName: 'typeOrder';
+    displayName: 'Address';
   };
   attributes: {
-    detail: Attribute.RichText;
-  };
-}
-
-export interface ArticleEbook extends Schema.Component {
-  collectionName: 'components_article_ebooks';
-  info: {
-    displayName: 'ebook';
-  };
-  attributes: {
-    intro: Attribute.Component<'share.paragraph-item'>;
-    ebook: Attribute.Component<'comp.ebook'>;
+    image: Attribute.Component<'image.image'>;
+    title: Attribute.String;
+    description: Attribute.Text;
   };
 }
 
@@ -491,30 +503,18 @@ export interface AboutUsPageMeet extends Schema.Component {
   };
 }
 
-export interface AddressAddress extends Schema.Component {
-  collectionName: 'components_address_addresses';
-  info: {
-    displayName: 'Address';
-  };
-  attributes: {
-    image: Attribute.Component<'image.image'>;
-    title: Attribute.String;
-    description: Attribute.Text;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'slide.member': SlideMember;
       'slide.comments': SlideComments;
+      'share.paragraph-item': ShareParagraphItem;
+      'item.icons': ItemIcons;
+      'item.head': ItemHead;
       'service-page.why-us': ServicePageWhyUs;
       'service-page.solution': ServicePageSolution;
       'service-page.help': ServicePageHelp;
-      'share.paragraph-item': ShareParagraphItem;
       'seo.metadata': SeoMetadata;
-      'item.icons': ItemIcons;
-      'item.head': ItemHead;
       'intro.intro': IntroIntro;
       'image.image': ImageImage;
       'home-page.working': HomePageWorking;
@@ -527,6 +527,8 @@ declare module '@strapi/types' {
       'gmail.gmail': GmailGmail;
       'contact-us-page.map': ContactUsPageMap;
       'contact-us-page.folow': ContactUsPageFolow;
+      'article.type-order': ArticleTypeOrder;
+      'article.ebook': ArticleEbook;
       'comp.why-us-items': CompWhyUsItems;
       'comp.text': CompText;
       'comp.order': CompOrder;
@@ -537,12 +539,10 @@ declare module '@strapi/types' {
       'comp.item1s': CompItem1S;
       'comp.ebook': CompEbook;
       'comp.cart': CompCart;
-      'article.type-order': ArticleTypeOrder;
-      'article.ebook': ArticleEbook;
+      'address.address': AddressAddress;
       'about-us-page.team': AboutUsPageTeam;
       'about-us-page.taget': AboutUsPageTaget;
       'about-us-page.meet': AboutUsPageMeet;
-      'address.address': AddressAddress;
     }
   }
 }
