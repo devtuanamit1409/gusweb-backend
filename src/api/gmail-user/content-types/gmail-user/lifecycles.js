@@ -71,7 +71,7 @@ module.exports = {
         attachments: [
           {
             filename: "Vie_AMIT_GROUP_CAPABILITY_PROFILE_7c3e0ead99.pdf",
-            path: urlPdf,
+            path: "https://admin.amitgroup.asia/uploads/Vie_AMIT_GROUP_CAPABILITY_PROFILE_7c3e0ead99.pdf",
             contentType: "application/pdf",
           },
         ],
