@@ -51,9 +51,10 @@ module.exports = {
   async afterCreate(event) {
     const { result } = event;
     const { email, locale, titleArticle, urlPdf } = result;
-    console.log("day la gmail user send ", email);
 
     const sendUserEmail = async () => {
+      const filename = path.basename(urlPdf);
+
       let transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
         port: process.env.SMTP_PORT,
@@ -65,17 +66,47 @@ module.exports = {
       });
 
       await transporter.sendMail({
-        from: `"Your App" <${process.env.SMTP_USER}>`,
+        from: `<${process.env.SMTP_USER}>`,
         to: email,
-        subject: "Download your PDF file",
-        text: `Please find the attached PDF for the article ${titleArticle}.`,
-        // attachments: [
-        //   {
-        //     filename: "Vie_AMIT_GROUP_CAPABILITY_PROFILE_7c3e0ead99.pdf",
-        //     path: "https://admin.amitgroup.asia/uploads/Vie_AMIT_GROUP_CAPABILITY_PROFILE_7c3e0ead99.pdf",
-        //     contentType: "application/pdf",
-        //   },
-        // ],
+        subject: `📥 Download your PDF file - ${titleArticle}`,
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #dddddd; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <!-- Header -->
+            <div style="background-color: #1fa9ec; color: white; text-align: center; padding: 20px;">
+              <h1 style="margin: 0; font-size: 24px;">🎉 Thank You for Your Interest!</h1>
+              <p style="margin: 0; font-size: 16px;">Here is your requested PDF</p>
+            </div>
+
+            <!-- Body -->
+            <div style="padding: 20px; color: #333;">
+              <p style="font-size: 16px; line-height: 1.5;">Hi,</p>
+              <p style="font-size: 16px; line-height: 1.5;">
+                Thank you for your interest in the article titled: <strong>${titleArticle}</strong>.
+                You can download the attached PDF file to explore the content.
+              </p>
+              <div style="margin: 20px 0; text-align: center;">
+                <a href="${urlPdf}" style="background-color: #1fa9ec; color: white; padding: 12px 20px; border-radius: 5px; text-decoration: none; font-size: 16px;">📥 Download PDF</a>
+              </div>
+              <p style="font-size: 14px; color: #555; line-height: 1.5;">
+                If the download button doesn’t work, please click the link below:<br>
+                <a href="${urlPdf}" style="color: #1fa9ec; word-break: break-all;">${urlPdf}</a>
+              </p>
+            </div>
+
+            <!-- Footer -->
+            <div style="background-color: #f4f4f4; text-align: center; padding: 10px; font-size: 12px; color: #888;">
+              <p style="margin: 0;">Gusweb Team</p>
+              <p style="margin: 0;">Contact us: support@gusweb.com</p>
+            </div>
+          </div>
+        `,
+        attachments: [
+          {
+            filename: filename,
+            path: urlPdf,
+            contentType: "application/pdf",
+          },
+        ],
       });
     };
 
