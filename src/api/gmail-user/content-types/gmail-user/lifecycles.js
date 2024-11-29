@@ -51,6 +51,7 @@ module.exports = {
   async afterCreate(event) {
     const { result } = event;
     const { email, locale, titleArticle, urlPdf } = result;
+    console.log("day la gmail user send ", email);
 
     const sendUserEmail = async () => {
       let transporter = nodemailer.createTransport({
@@ -68,13 +69,13 @@ module.exports = {
         to: email,
         subject: "Download your PDF file",
         text: `Please find the attached PDF for the article ${titleArticle}.`,
-        attachments: [
-          {
-            filename: "Vie_AMIT_GROUP_CAPABILITY_PROFILE_7c3e0ead99.pdf",
-            path: "https://admin.amitgroup.asia/uploads/Vie_AMIT_GROUP_CAPABILITY_PROFILE_7c3e0ead99.pdf",
-            contentType: "application/pdf",
-          },
-        ],
+        // attachments: [
+        //   {
+        //     filename: "Vie_AMIT_GROUP_CAPABILITY_PROFILE_7c3e0ead99.pdf",
+        //     path: "https://admin.amitgroup.asia/uploads/Vie_AMIT_GROUP_CAPABILITY_PROFILE_7c3e0ead99.pdf",
+        //     contentType: "application/pdf",
+        //   },
+        // ],
       });
     };
 
