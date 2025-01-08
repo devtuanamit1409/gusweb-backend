@@ -43,6 +43,21 @@ export interface ShareParagraphItem extends Schema.Component {
   };
 }
 
+export interface SeoMetadata extends Schema.Component {
+  collectionName: 'components_seo_metadata';
+  info: {
+    displayName: 'metadata';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    url: Attribute.String;
+    type: Attribute.Enumeration<['article']>;
+    images: Attribute.Component<'image.image'>;
+  };
+}
+
 export interface ServicePageWhyUs extends Schema.Component {
   collectionName: 'components_service_page_whyuses';
   info: {
@@ -76,21 +91,6 @@ export interface ServicePageHelp extends Schema.Component {
     title: Attribute.String;
     description: Attribute.Text;
     items: Attribute.Component<'comp.item2s', true>;
-  };
-}
-
-export interface SeoMetadata extends Schema.Component {
-  collectionName: 'components_seo_metadata';
-  info: {
-    displayName: 'metadata';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
-    url: Attribute.String;
-    type: Attribute.Enumeration<['article']>;
-    images: Attribute.Component<'image.image'>;
   };
 }
 
@@ -509,10 +509,10 @@ declare module '@strapi/types' {
       'slide.member': SlideMember;
       'slide.comments': SlideComments;
       'share.paragraph-item': ShareParagraphItem;
+      'seo.metadata': SeoMetadata;
       'service-page.why-us': ServicePageWhyUs;
       'service-page.solution': ServicePageSolution;
       'service-page.help': ServicePageHelp;
-      'seo.metadata': SeoMetadata;
       'item.icons': ItemIcons;
       'item.head': ItemHead;
       'intro.intro': IntroIntro;
